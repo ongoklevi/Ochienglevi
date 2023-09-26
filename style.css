@@ -5,11 +5,11 @@
 
 
 :root {
-  --primaryColor: white;
+  --primaryColor: rgb(210, 235, 245);
   --navColor1: #12a6db;
-  --navColor2: white;
+  --navColor2: rgb(210, 235, 245);
   --navColor3: #12a6db;
-  --navColor4: white;
+  --navColor4: rgb(210, 235, 245);
   --navColor5: #12a6db;
 }
 
