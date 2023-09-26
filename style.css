@@ -1,0 +1,359 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
+
+
+:root {
+  --primaryColor: white;
+  --navColor1: #12a6db;
+  --navColor2: white;
+  --navColor3: #12a6db;
+  --navColor4: white;
+  --navColor5: #12a6db;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  font-family: Nunito, sans-serif;
+}
+
+/* --- Navigation Menu ------------------------------ */
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: translateX(-100vw);
+}
+
+.overlay-slide-right {
+  transition: all 0.4s ease-in-out;
+  transform: translateX(0);
+}
+
+.overlay-slide-left {
+  transition: all 0.8s ease-in-out;
+  transform: translateX(-100vw);
+}
+
+/* Nav Menu Items */
+nav,
+nav ul {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  list-style: none;
+}
+
+nav ul li {
+  height: 20%;
+  overflow: hidden;
+}
+
+nav li a {
+  position: relative;
+  top: 45%;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+nav li a:hover {
+  transform: scale(1.2);
+}
+
+nav li a::before {
+  content: "";
+  width: 25vw;
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  top: 47.5%;
+  left: 0;
+  opacity: 0;
+}
+
+nav li a:hover::before {
+  opacity: 1;
+}
+
+nav li:nth-of-type(1) {
+  background-color: var(--navColor1);
+}
+
+nav li:nth-of-type(2) {
+  background-color: var(--navColor2);
+}
+
+nav li:nth-of-type(3) {
+  background-color: var(--navColor3);
+}
+
+nav li:nth-of-type(4) {
+  background-color: var(--navColor4);
+}
+
+nav li:nth-of-type(5) {
+  background-color: var(--navColor5);
+}
+
+/* Slide in animation with delay for each */
+.slide-in-1 {
+  animation: slide-in 0.4s linear 0.2s both;
+}
+
+.slide-in-2 {
+  animation: slide-in 0.4s linear 0.4s both;
+}
+
+.slide-in-3 {
+  animation: slide-in 0.4s linear 0.6s both;
+}
+
+.slide-in-4 {
+  animation: slide-in 0.4s linear 0.8s both;
+}
+
+.slide-in-5 {
+  animation: slide-in 0.4s linear 1s both;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Slide out animation with delay for each */
+.slide-out-1 {
+  animation: slide-out 0.3s linear 0.5s both;
+}
+
+.slide-out-2 {
+  animation: slide-out 0.3s linear 0.4s both;
+}
+
+.slide-out-3 {
+  animation: slide-out 0.3s linear 0.3s both;
+}
+
+.slide-out-4 {
+  animation: slide-out 0.3s linear 0.2s both;
+}
+
+.slide-out-5 {
+  animation: slide-out 0.3s linear 0.1s both;
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* --- Menu Bars ------------------------------------ */
+
+.menu-bars {
+  position: fixed;
+  top: 1rem;
+  right: 2rem;
+  z-index: 10;
+  display: inline;
+  cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 2px;
+  background-color: #fff;
+  margin: 8px 0;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+  transform: rotate(-45deg) translate(-7px, 8px);
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+/* --- Sections ------------------------------------ */
+
+section {
+  width: 100%;
+  height: auto;
+  /*position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;*/
+  letter-spacing: 2px;
+  color: var(--primaryColor);
+}
+
+section#home {
+  background-color: #12a6db;
+  background-size: cover;
+  /*background-position: center center;*/
+}
+
+section#home a {
+  position: absolute;
+  padding-top: 30px;
+  padding-left: 20px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  color: var(--primaryColor);
+  text-decoration: underline;
+}
+.intro{
+  font-size: 60px;
+  font-family: 'Courier New', Courier, monospace;
+  padding-top: 200px;
+}
+.name{
+  font-family: 'Black Ops One', cursive;
+  color: #fff;
+  
+  
+}
+section#about {
+  background-color: var(--navColor2);
+  padding: 7% 15%;
+  color: #000;
+  font-family: 'Courier New', Courier, monospace;
+}
+.about-heading{
+  padding:  0 1rem;
+}
+.about-text{
+  text-align: center;
+  padding: 4% 15%;
+  font-size: 20px;
+}
+
+
+section#skills {
+  background-color: var(--navColor3);
+  padding: 7% 10%;
+}
+#skills img{
+  padding: auto;
+  margin: 30px 20px;
+  width: 80px;
+  height: 80px;
+}
+.skillicon{
+  display: inline-block;
+  font-size: 10px;
+  text-align: center;
+}
+.small-text{
+  font-size: 15px;
+}
+.btn-center{
+  position: absolute;
+  margin-top: 50px;
+  left: 35rem;
+
+}
+
+section#projects {
+  background-color: var(--navColor4);
+  padding: 7% 15%;
+  color: #000;
+}
+#projects img{
+  width: 40px;
+  height: 300px;
+  border-radius: 2rem;
+}
+.projectbutton{
+  margin-top: 60px;
+}
+.row{
+  padding: 5% 0;
+}
+section#contact {
+  background-color: var(--navColor5);
+  padding: 7% 15%;
+  font-size: 30px;
+}
+.contact-info{
+  margin-top: 30px;
+}
+.social-icons{
+  font-size: 15px;
+}
+
+
+#footer{
+  background-color: #fff;
+  padding: 7% 15%;
+  text-align: center; 
+}
+.social{
+  margin: 1rem;
+  font-size: 30px;
+
+}
+.email{
+  margin-top: 70px;
+  font-size: 20px;
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-transform: lowercase;
+}
+.social:hover{
+  color: rgb(67, 67, 233);
+}
+.game-image{
+  width: 70px;
+  height: 500px;
+}
+
+/* Media Query: Large Smartphone (Vertical) */
+@media (max-width: 600px) {
+  section#home a {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .menu-bars {
+    top: 0.5rem;
+    right: 1rem;
+  }
+}
